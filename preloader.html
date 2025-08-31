@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loading...</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Container for spinner + logo */
+    .loader {
+      position: relative;
+      width: 260px;   /* bigger container */
+      height: 260px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Outer spinning ring */
+    .ring {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 260px;   /* bigger ring */
+      height: 260px;
+      border-radius: 50%;
+      border: 10px solid #0f1724;
+      border-top: 10px solid transparent; /* spinner effect */
+      animation: spin 2s linear infinite;
+    }
+
+    /* Fixed logo in the center */
+    .logo {
+      width: 180px;   /* bigger logo */
+      height: 180px;
+      border-radius: 50%;
+      object-fit: contain;
+      position: relative;
+      z-index: 2;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
+  <script>
+    // Redirect to main index.html after 15 seconds
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 15000);
+  </script>
+</head>
+<body>
+  <div class="loader">
+    <div class="ring"></div>
+    <img src="logo.png" alt="Prezzytoons Logo" class="logo">
+  </div>
+</body>
+</html>
